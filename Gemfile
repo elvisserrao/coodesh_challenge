@@ -7,8 +7,7 @@ ruby '3.0.0'
 
 gem 'rails', '~> 7.0.4', '>= 7.0.4.1'
 
-# Use sqlite3 as the database for Active Record
-gem "sqlite3", "~> 1.4"
+gem 'pg', '~> 1.1'
 
 gem 'puma', '~> 5.0'
 
