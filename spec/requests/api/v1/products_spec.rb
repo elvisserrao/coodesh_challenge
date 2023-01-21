@@ -46,6 +46,13 @@ RSpec.describe "/products", type: :request do
       params: { product: { last_modified_t: Time.zone.now } }, as: :json
         expect(product.last_modified_t).not_to eq(product.reload.last_modified_t)
       end
+
+      it "renders a unprocessable response" do
+        patch product_url(product), params: { product: { imported_t: nil } }, as: :json
+
+        expect(response).to be_unprocessable
+      end
+
     end
   end
 
