@@ -20,6 +20,10 @@ group :development, :test do
   gem 'rspec-rails', '~> 6.0.0'
 end
 
+group :test do
+  gem 'shoulda-matchers'
+end
+
 group :development do
   gem 'rubocop'
 end
