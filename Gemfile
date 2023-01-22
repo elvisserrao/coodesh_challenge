@@ -13,6 +13,7 @@ gem 'puma', '~> 5.0'
 gem 'rails', '~> 7.0.4', '>= 7.0.4.1'
 gem 'rest-client'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+gem 'whenever', require: false
 gem 'zlib'
 
 group :development, :test do
