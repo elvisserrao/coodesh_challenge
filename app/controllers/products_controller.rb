@@ -5,8 +5,8 @@ class ProductsController < ApplicationController
 
   # GET /products
   def index
-    @products = Product.all
-
+    pagy, @products = pagy(Product.all)
+    pagy_headers_merge(pagy)
     render json: @products
   end
 
