@@ -24,4 +24,9 @@ class DbStatus < ApplicationRecord
 
     result
   end
+
+  def self.register_cron_execution
+    register = DbStatus.first_or_create
+    register.touch
+  end
 end
