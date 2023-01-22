@@ -7,15 +7,15 @@ class ProductsDataFile
 
   def initialize(filename)
     @base_url = "https://challenges.coode.sh/food/data/json/#{filename}"
-    @file_path = @response.file.path
   end
 
   def get
-    @response = RestClient::Request.execute(
+    response = RestClient::Request.execute(
       method: :get,
       url: @base_url,
       raw_response: true
     )
+    @file_path = response.file.path
 
     self
   end
