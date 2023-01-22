@@ -11,7 +11,7 @@ RSpec.describe "/products", type: :request do
       get products_url, as: :json
       expect(response).to be_successful
       body = JSON.parse(response.body)
-      expect(body.count).to eq(25)
+      expect(body.count).to eq(20)
       expect(response.body).to include('imported_t')
       expect(response.body).to include('status')
 
