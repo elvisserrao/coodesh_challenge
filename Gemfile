@@ -7,6 +7,7 @@ ruby '3.0.0'
 
 gem 'bootsnap', require: false
 gem 'jb'
+gem 'pagy'
 gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'
 gem 'rails', '~> 7.0.4', '>= 7.0.4.1'
