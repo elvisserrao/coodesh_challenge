@@ -5,12 +5,12 @@ require 'zlib'
 class ProductsParser
   attr_reader :file, :parsed_data
 
-  def initialize(_file_path)
+  def initialize
     @parsed_data = []
     @invalid_data = []
   end
 
-  def parse
+  def parse(file_path)
     @file = Zlib::GzipReader.new(File.open(file_path))
     start_reading
   end
