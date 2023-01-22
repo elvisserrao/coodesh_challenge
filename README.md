@@ -5,24 +5,32 @@ Neste projeto foi desenvolvida um REST API que utiliza os dados do projeto Open 
 
 ## Tecnologias usadas
 
-* Ruby: 3.0.0
-* Rails: 7.0.4
-* PostgreSQL
+* [Ruby: 3.0.0](https://www.ruby-lang.org/pt/documentation/installation/)
+* [Rails: 7.0.4](https://guides.rubyonrails.org/getting_started.html#creating-a-new-rails-project-installing-rails-installing-rails)
+* [PostgreSQL: 13.9](https://www.postgresql.org/download/)
 
 ## Setup
+
+#### Variáveis de ambiente
+
+Faça uma cópia do arquivo: `.env.example` e renomeie para `.env`, neste arquivo, deverão ser definidas as credenciais de acesso ao Banco de Dados.
+
 #### No console:
 ```console
-# clone o repositório
-git clone git@github.com:elvisserrao/coodesh_challenge.git
+## Clone o repositório
+$ git clone git@github.com:elvisserrao/coodesh_challenge.git
 
-# entre no diretorio do projeto
-cd coodesh_challenge
+## Entre no diretorio do projeto
+$ cd coodesh_challenge
 
-# instale as dependências do projeto
-bundle
+## Instale as dependências do projeto
+$ bundle
 
-# inicie o servidor
-rails server
+## Crie o banco de dados e execute as migrations
+$ rails db:create db:migrate
+
+## Inicie o servidor
+$ rails server
 ```
 
 ### A REST API
