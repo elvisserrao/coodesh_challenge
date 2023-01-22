@@ -6,6 +6,16 @@ class Product < ApplicationRecord
   enum :status, { draft: 0, published: 1, trash: 2 }
 
   validates :imported_t, :status, presence: true
+
+  def self.import
+    files_list = ProductsFiles.new.get
+
+    files_list.each do |filename|
+      data_file = ProductsDataFile.new(filename).get
+      ProductsParser.new.parse(data_file.file_path)
+    end
+  end
+
   private
 
   def set_default_value
