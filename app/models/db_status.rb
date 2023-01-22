@@ -27,6 +27,6 @@ class DbStatus < ApplicationRecord
 
   def self.register_cron_execution
     register = DbStatus.first_or_create
-    register.touch
+    register.update(updated_at: Time.zone.now)
   end
 end
