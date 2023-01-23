@@ -1,0 +1,9 @@
+# frozen_string_literal: true
+
+{
+  can_read_db: DbStatus.can_read?,
+  can_write_db: DbStatus.can_write?,
+  last_cron_execution: DbStatus.last_cron_execution_time,
+  uptime: distance_of_time_in_words_to_now(CoodeshChallenge::BOOTED_AT),
+  memory_in_use: memory_usage(unit: :mb)
+}
