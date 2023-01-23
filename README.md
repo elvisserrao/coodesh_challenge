@@ -33,6 +33,22 @@ $ rails db:create db:migrate
 $ rails server
 ```
 
+#### Gere uma chave para autenticar na API
+```console
+## Rode o comando
+$ rails api_key:generate
+```
+
+#### Cron job
+
+
+- Para definir o melhor horário para que os dados sejam importados, altere no arquivo `config/schedule.rb`
+
+```console
+## Execute o seguinte comando para atualizar o crontab
+$ whenever --update-crontab
+```
+
 ### A REST API
 
 Na REST API teremos os seguintes endpoints:
