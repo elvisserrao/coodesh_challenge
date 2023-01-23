@@ -1,7 +1,7 @@
 # Projeto Space Flight News Api
 Neste projeto foi desenvolvida um REST API que utiliza os dados do projeto Open Food Facts.
 
-[Apresentação do desafio](https://lab.coodesh.com/elvisserrao1/products-parser-20230105)
+[Apresentação do desafio](https://www.loom.com/embed/137ff0baa7144ca49914b79ce322d541)
 
 ## Tecnologias usadas
 
