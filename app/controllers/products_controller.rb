@@ -10,12 +10,12 @@ class ProductsController < ApplicationController
     render json: @products
   end
 
-  # GET /products/1
+  # GET /products/:code
   def show
     render json: @product
   end
 
-  # PATCH/PUT /products/1
+  # PATCH/PUT /products/:code
   def update
     if @product.update(product_params)
       render json: @product
@@ -24,7 +24,7 @@ class ProductsController < ApplicationController
     end
   end
 
-  # DELETE /products/1
+  # DELETE /products/:code
   def destroy
     @product.trash!
   end
@@ -33,7 +33,7 @@ class ProductsController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_product
-    @product = Product.find(params[:id])
+    @product = Product.find_by(code: params[:code])
   end
 
   # Only allow a list of trusted parameters through.
