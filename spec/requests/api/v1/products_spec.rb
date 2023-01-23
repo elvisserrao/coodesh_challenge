@@ -8,7 +8,7 @@ RSpec.describe "/products", type: :request do
     end
 
     it "renders a successful response" do
-      get products_url, as: :json
+      get products_url, as: :json, headers: { 'api-key': ENV['API_KEY'] }
       expect(response).to be_successful
       body = JSON.parse(response.body)
       expect(body.count).to eq(20)
@@ -22,7 +22,7 @@ RSpec.describe "/products", type: :request do
     let (:product) { create(:product) }
 
     it "renders a successful response" do
-      get product_url(product), as: :json
+      get product_url(product), as: :json, headers: { 'api-key': ENV['API_KEY'] }
       expect(response).to be_successful
     end
   end
@@ -33,7 +33,7 @@ RSpec.describe "/products", type: :request do
     context "when product is updated" do
 
       it "renders a JSON response with product's attributes" do
-        patch product_url(product),
+        patch product_url(product), headers: { 'api-key': ENV['API_KEY'] },
       params: { product: { last_modified_t: Time.zone.now } }, as: :json
 
         expect(response).to be_successful
@@ -42,13 +42,13 @@ RSpec.describe "/products", type: :request do
       end
 
       it "Product.last_modified_t gets updated" do
-        patch product_url(product),
+        patch product_url(product), headers: { 'api-key': ENV['API_KEY'] },
       params: { product: { last_modified_t: Time.zone.now } }, as: :json
         expect(product.last_modified_t).not_to eq(product.reload.last_modified_t)
       end
 
       it "renders a unprocessable response" do
-        patch product_url(product), params: { product: { imported_t: nil } }, as: :json
+        patch product_url(product), headers: { 'api-key': ENV['API_KEY'] }, params: { product: { imported_t: nil } }, as: :json
 
         expect(response).to be_unprocessable
       end
@@ -60,7 +60,7 @@ RSpec.describe "/products", type: :request do
     let (:product) { create(:product, :published) }
 
     it "Set requested product status to trash" do
-      delete product_url(product), as: :json
+      delete product_url(product), headers: { 'api-key': ENV['API_KEY'] }, as: :json
 
       expect(product.reload.status).to eq('trash')
     end
