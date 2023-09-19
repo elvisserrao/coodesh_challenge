@@ -1,4 +1,4 @@
-# Projeto Space Flight News Api
+# Projeto Open Food Facts
 Neste projeto foi desenvolvida um REST API que utiliza os dados do projeto Open Food Facts.
 
 [Apresentação do desafio](https://www.loom.com/embed/137ff0baa7144ca49914b79ce322d541)
